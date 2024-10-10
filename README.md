@@ -32,12 +32,12 @@ Bem-vindo ao meu portfólio! Eu sou Kálitha Queiroz.
 ## 	💻 Preview
 <table>
   <tr>
-    <td><img src="src/assets/preview/desktop_home.png" alt="" height="300px"></td>
-    <td rowspan="2"><img src="src/assets/preview/mobile_home.png" alt="" height="609px"></td>
-    <td rowspan="2"><img src="src/assets/preview/mobile_content_header.png" alt="" height="609px"></td>
+    <td><img src="src/assets/preview/desktop_home.png" alt="" height="250px"></td>
+    <td rowspan="2"><img src="src/assets/preview/mobile_home.png" alt="" height="510px"></td>
+    <td rowspan="2"><img src="src/assets/preview/mobile_content_header.png" alt="" height="510px"></td>
   </tr>
   <tr>
-    <td><img src="src/assets/preview/desktop_content_header.png" alt="" height="300px"></td>
+    <td><img src="src/assets/preview/desktop_content_header.png" alt="" height="250px"></td>
   </tr>
 </table>
 
