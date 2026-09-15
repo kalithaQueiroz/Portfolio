@@ -1,0 +1,367 @@
+/* Contact */
+
+.text-link svg,
+.outline-button svg,
+.portfolio-card a svg,
+.contact-email svg {
+  width: 1rem;
+  transition: transform 0.25s;
+}
+
+.contact {
+  background:
+    radial-gradient(circle at 50% 90%, #471064, transparent 48%),
+    linear-gradient(#05040a, #0b0714);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contact h2 {
+  margin: 1rem 0 2rem;
+}
+
+.contact > p:not(.eyebrow) {
+  max-width: 650px;
+  color: #bfb9cb;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.contact-email {
+  font-size: clamp(1.3rem, 3vw, 2.4rem);
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #df2bab;
+  padding-bottom: 0.6rem;
+}
+
+.contact-email:hover svg {
+  transform: translateX(0.4rem);
+}
+
+.intro-about,
+.manifesto,
+.skills-section,
+.portfolio-section,
+.qualifications,
+.contact {
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .manifesto,
+  .skills-section,
+  .portfolio-section,
+  .qualifications,
+  .contact,
+  footer {
+    scroll-snap-align: start;
+  }
+  .contact-frame {
+    min-height: 440px;
+  }
+}
+
+.about-lead > p:not(.eyebrow),
+.about-paragraphs,
+.section-heading > p:last-child,
+.portfolio-card > span,
+.qualification-detail span,
+.contact > p:not(.eyebrow),
+.project-hero > p:last-child,
+.project-list article span {
+  color: #e4e0ec;
+}
+
+.contact::before {
+  z-index: 0;
+  background:
+    radial-gradient(
+      ellipse at 50% 48%,
+      rgba(35, 12, 57, 0.32),
+      transparent 52%
+    ),
+    linear-gradient(
+      100deg,
+      rgba(3, 2, 8, 0.94),
+      rgba(7, 5, 16, 0.7) 48%,
+      rgba(2, 2, 7, 0.95)
+    );
+}
+
+.contact::after {
+  z-index: 2;
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 18%,
+      rgba(3, 2, 8, 0.3) 58%,
+      rgba(1, 1, 4, 0.82) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(4, 3, 9, 0.38),
+      transparent 35%,
+      rgba(2, 2, 6, 0.48)
+    );
+}
+
+.contact-waves {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 112vw;
+  height: min(84vh, 650px);
+  transform: translate(-50%, -48%);
+  opacity: 0.48;
+  overflow: visible;
+}
+
+.contact > *:not(.contact-waves) {
+  position: relative;
+  z-index: 3;
+}
+
+.contact-waves path {
+  fill: none;
+  stroke-width: 0.72;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.34;
+}
+
+.contact-waves .wave-family-b path {
+  opacity: 0.27;
+}
+
+.contact-waves .wave-tone-0 {
+  stroke: url(#contact-wave-tone-0);
+}
+
+.contact-waves .wave-tone-1 {
+  stroke: url(#contact-wave-tone-1);
+}
+
+.contact-waves .wave-tone-2 {
+  stroke: url(#contact-wave-tone-2);
+}
+
+.contact-waves .wave-tone-3 {
+  stroke: url(#contact-wave-tone-3);
+}
+
+.contact-waves .wave-tone-4 {
+  stroke: url(#contact-wave-tone-4);
+}
+
+.contact-waves .wave-tone-5 {
+  stroke: url(#contact-wave-tone-5);
+}
+
+.contact-links a {
+  position: relative;
+  width: 46px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 0.7rem;
+  color: #fff;
+  background: linear-gradient(
+    145deg,
+    rgba(37, 17, 67, 0.46),
+    rgba(12, 9, 37, 0.56)
+  );
+  border: 1px solid rgba(177, 73, 220, 0.22);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.05),
+    0 0.65rem 1.5rem rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+  transition:
+    transform 0.28s cubic-bezier(0.2, 0.75, 0.25, 1),
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease;
+}
+
+.contact-links a::before {
+  display: none;
+}
+
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  transform: translateY(-0.2rem);
+  color: #fff;
+  background: rgba(72, 28, 100, 0.62);
+  border-color: rgba(218, 72, 208, 0.5);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.08),
+    0 0.9rem 1.8rem rgba(0, 0, 0, 0.25);
+}
+
+.contact-links svg {
+  width: 1.075rem;
+  height: 1.075rem;
+  stroke-width: 1.7;
+  filter: none;
+}
+
+.contact-links a::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: -2rem;
+  transform: translate(-50%, 0.35rem);
+  color: #eee9f4;
+  font:
+    600 0.78rem "DM Sans",
+    sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    transform 0.25s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.contact-links a:hover::after,
+.contact-links a:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.manifesto,
+.skills-section,
+.portfolio-section,
+.qualifications,
+.contact,
+footer {
+  scroll-snap-align: none;
+}
+
+.portfolio-main .intro-about,
+.portfolio-main .manifesto,
+.portfolio-main .skills-section,
+.portfolio-main .portfolio-section,
+.portfolio-main .qualifications,
+.portfolio-main .contact {
+  min-height: auto;
+  padding-top: clamp(5.5rem, 8vw, 8rem);
+  padding-bottom: clamp(5.5rem, 8vw, 8rem);
+}
+
+.contact::before,
+.contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(9, 5, 22, 0.48),
+    transparent 72%
+  );
+}
+
+.contact-content h2 {
+  margin: 1rem 0 1.5rem;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+}
+
+.contact-content > p:not(.eyebrow) {
+  color: #e0dbe8;
+  line-height: 1.7;
+  max-width: 590px;
+  font-size: 0.95rem;
+}
+
+.contact-links {
+  font:
+    0.75rem "Space Mono",
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #b9b1c6;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(0.7rem, 1.6vw, 1.2rem);
+  padding-bottom: 2.5rem;
+  margin-top: 1.8rem;
+}
+
+@media (max-width: 520px) {
+  .contact-frame {
+    min-height: 320px;
+  }
+  .contact-content h2 {
+    font-size: clamp(2.35rem, 12vw, 3.5rem);
+  }
+  .portfolio-main .contact {
+    padding-top: 2.5rem;
+    padding-bottom: 0.9rem;
+  }
+}
+
+.portfolio-main .contact {
+  position: relative;
+  isolation: isolate;
+  min-height: auto;
+  background: transparent;
+  overflow: visible;
+  padding-top: clamp(2.75rem, 4.5vw, 4.5rem);
+  padding-bottom: clamp(1.1rem, 2vw, 2rem);
+}
+
+.contact-frame {
+  position: relative;
+  isolation: isolate;
+  width: min(1180px, 100%);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 4rem) 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  min-height: 300px;
+  padding-top: 2rem;
+  padding-bottom: 1.4rem;
+}
+
+.contact-frame .contact-waves {
+  z-index: 1;
+  width: 130%;
+  height: 125%;
+  opacity: 0.32;
+  display: none;
+}

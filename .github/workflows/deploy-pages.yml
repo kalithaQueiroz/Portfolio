@@ -1,0 +1,66 @@
+name: Publicar portfólio no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar o Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Definir o caminho do projeto
+        shell: bash
+        run: |
+          REPOSITORY_NAME="${GITHUB_REPOSITORY#*/}"
+          if [[ "$REPOSITORY_NAME" == *.github.io ]]; then
+            echo "NEXT_PUBLIC_BASE_PATH=" >> "$GITHUB_ENV"
+          else
+            echo "NEXT_PUBLIC_BASE_PATH=/$REPOSITORY_NAME" >> "$GITHUB_ENV"
+          fi
+
+      - name: Instalar as dependências
+        run: npm ci
+
+      - name: Verificar o código
+        run: npm run lint
+
+      - name: Gerar o site estático
+        run: npm run build
+
+      - name: Preparar o GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Enviar os arquivos gerados
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,262 @@
+/* About */
+
+.hero-portrait {
+  position: relative;
+  width: min(42vw, 590px);
+  justify-self: end;
+  align-self: end;
+  filter: drop-shadow(0 2rem 4rem rgba(0, 0, 0, 0.5));
+}
+.hero-portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.intro-about {
+  background:
+    radial-gradient(circle at 75% 35%, #57145d 0, transparent 42%),
+    linear-gradient(145deg, #050407, #160617 65%, #050407);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+  overflow: hidden;
+  padding-left: max(6vw, calc((100vw - 1200px) / 2));
+  padding-right: max(6vw, calc((100vw - 1200px) / 2));
+}
+.about-lead {
+  max-width: 700px;
+  margin-left: 0;
+}
+.about-lead > p:not(.eyebrow) {
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+.portrait-card {
+  width: min(32vw, 420px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle, #432260, #100916 70%);
+  border: 1px solid rgba(231, 20, 165, 0.55);
+  box-shadow:
+    0 0 0 2rem rgba(231, 20, 165, 0.025),
+    0 0 80px rgba(118, 34, 188, 0.25);
+  overflow: hidden;
+}
+.portrait-card img {
+  width: 102%;
+  height: auto;
+  transform: translateY(7%);
+}
+.about-paragraphs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  color: #c6c1d2;
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+.about-paragraphs > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.about-paragraphs p {
+  margin-bottom: 1.25rem;
+}
+.hero,
+.intro-about {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.portfolio-main .intro-about {
+  padding-top: clamp(7rem, 9vw, 9rem);
+}
+.outline-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-width: 180px;
+  margin-top: 2rem;
+  padding: 0.95rem 1.65rem;
+  border-radius: 99px;
+  color: #fff;
+  background: linear-gradient(90deg, #8d36dd, #e229ad, #3839ba, #8d36dd, #e229ad, #3839ba);
+  background-position: left;
+  background-size: 250%;
+  box-shadow: none;
+  font:
+    700 0.76rem "Space Mono",
+    monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-position 1s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  border: 0;
+}
+.outline-button::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: #05040a;
+  transition: background-color 0.45s ease;
+}
+
+.outline-button > *,
+.outline-button svg {
+  position: relative;
+  z-index: 1;
+}
+
+.outline-button:hover,
+.outline-button:focus-visible {
+  color: #fff;
+  background-position: right;
+  box-shadow: 0 0 22px rgba(226, 41, 173, 0.3);
+}
+.outline-button:hover::before,
+.outline-button:focus-visible::before {
+  background: #05040a;
+}
+.outline-button:hover svg,
+.outline-button:focus-visible svg {
+  transform: translateX(0.4rem);
+}
+.outline-button:active {
+  transform: scale(0.95);
+}
+
+.outline-button:hover,
+.outline-button:focus-visible {
+  transform: scale(0.97);
+}
+.portrait-orbit {
+  position: relative;
+  width: min(34vw, 450px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  justify-self: center;
+}
+.portrait-orbit::before,
+.portrait-orbit::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -12% -22%;
+  border: 1px solid rgba(150, 68, 242, 0.26);
+  border-radius: 50%;
+  transform: rotate(-12deg);
+  box-shadow:
+    0 0 55px rgba(118, 44, 224, 0.18),
+    0 0 0 18px rgba(131, 54, 226, 0.025),
+    0 0 0 42px rgba(131, 54, 226, 0.018);
+}
+.portrait-orbit .portrait-card {
+  position: relative;
+  z-index: 1;
+  width: 86%;
+  box-shadow:
+    0 0 0 1px rgba(163, 65, 237, 0.32),
+    0 0 42px rgba(110, 42, 218, 0.48),
+    0 0 95px rgba(73, 51, 207, 0.28);
+}
+.portrait-orbit .portrait-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -18%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(128, 55, 239, 0.42),
+    rgba(83, 35, 180, 0.14) 45%,
+    transparent 70%
+  );
+  filter: blur(18px);
+}
+.about-lead h2 {
+  font-size: clamp(3rem, 6vw, 6.2rem);
+}
+@media (max-width: 900px) {
+  .hero-portrait {
+    width: min(92vw, 520px);
+    justify-self: center;
+    grid-row: 1;
+    opacity: 0.88;
+  }
+
+  .intro-about {
+    grid-template-columns: 1fr;
+    padding-top: 7rem;
+    text-align: center;
+  }
+
+  .about-lead {
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-lead .eyebrow,
+  .about-lead h2,
+  .about-lead > p:not(.eyebrow) {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .outline-button {
+    width: max-content;
+    margin: 2rem auto 0;
+  }
+
+  .portrait-card {
+    width: min(78vw, 380px);
+    grid-row: 1;
+    margin: auto;
+  }
+
+  .portrait-orbit {
+    width: min(82vw, 410px);
+    grid-row: 1;
+    margin: auto;
+  }
+
+  .about-paragraphs {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-lead h2 {
+    font-size: clamp(2.55rem, 12vw, 3.7rem);
+  }
+}
+.about-lead h2 {
+  font-size: clamp(3rem, 6vw, 6.2rem);
+}
+.portrait-orbit::before {
+  inset: 1% 5%;
+}
+.portrait-orbit::after {
+  border-color: rgba(217, 46, 184, 0.18);
+  transform: rotate(20deg);
+  box-shadow: none;
+  inset: 5% -1%;
+}

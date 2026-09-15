@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">KQ — Kalitha Queiroz</title>
+  <desc id="description">Favicon com as iniciais KQ em tons de magenta e roxo sobre fundo azul-escuro.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="40" y1="40" x2="472" y2="472" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13051f"/>
+      <stop offset="1" stop-color="#080d2c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="118" y1="126" x2="402" y2="394" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f044c5"/>
+      <stop offset="0.52" stop-color="#c932d3"/>
+      <stop offset="1" stop-color="#7758ff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#background)"/>
+  <ellipse cx="256" cy="256" rx="203" ry="190" fill="none" stroke="#d02bc4" stroke-opacity="0.28" stroke-width="5" transform="rotate(-8 256 256)"/>
+  <ellipse cx="256" cy="256" rx="215" ry="180" fill="none" stroke="#6947ff" stroke-opacity="0.2" stroke-width="3" transform="rotate(7 256 256)"/>
+
+  <text x="256" y="315" text-anchor="middle" fill="url(#accent)" filter="url(#glow)"
+        font-family="Georgia, 'Times New Roman', serif" font-size="210" font-weight="700" letter-spacing="-24">KQ</text>
+
+  <circle cx="405" cy="117" r="8" fill="#ef3bc5"/>
+</svg>
